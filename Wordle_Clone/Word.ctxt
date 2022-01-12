@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Word
+comment0.text=\r\n\ \r\n\ Class\ created\ to\ simplify\ guessing\ words\ through\r\n\ methods\ and\ stored\ variables\r\n\ \r\n
+comment1.params=wordP
+comment1.target=Word(java.lang.String)
+comment1.text=\r\n\ \r\n\ Makes\ a\ new\ word\ to\ guess\ and\ sets\ it\ to\ all\ uppercase\ to\ prevent\ mismatching\r\n\ @param\ wordP\:\ initializes\ the\ word\ to\ guess\r\n\ \r\n
+comment2.params=guessWord
+comment2.target=void\ makeGuess(java.lang.String)
+comment2.text=\r\n\ \r\n\ Makes\ a\ guess\ and\ changes\ the\ contents\ of\ guess\ accordingly\r\n\ @param\ guessWord\:\ the\ word\ being\ guessed\r\n\ \r\n
+comment3.params=
+comment3.target=java.lang.String\ getWord()
+comment3.text=\r\n\ \r\n\ Getter\ method\ for\ word\r\n\ \r\n
+comment4.params=
+comment4.target=java.lang.String\ getGuessed()
+comment4.text=\r\n\ \r\n\ Gets\ all\ the\ letters\ guessed\ correctly\ \r\n\ and\ in\ the\ correct\ position\r\n\ \r\n
+numComments=5
