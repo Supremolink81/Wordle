@@ -8,7 +8,7 @@ import java.util.Arrays;
 public class Word{
     
     private String word;
-    private char[][] guess;
+    private char[] guess;
     
     /**
      * 
@@ -17,13 +17,10 @@ public class Word{
      * 
      */
     public Word(String wordP){
-        word=wordP;
-        word.toUpperCase();
-        guess=new char[2][word.length()];
-        for(int i=0;i<word.length();i++){
-            guess[0][i]='_';
-            guess[1][i]=' ';
-        }
+        word = wordP;
+        word = word.toUpperCase();
+        guess=new char[word.length()];
+        for(int i=0;i<word.length();i++)guess[i]='_';
     }
     
     
@@ -35,26 +32,18 @@ public class Word{
      */
     public void makeGuess(String guessWord){
         guessWord=guessWord.toUpperCase();
+        System.out.print("Results: ");
         for(byte i=0;i<guessWord.length();i++){
             
             char guessChar=guessWord.charAt(i);
             char wordChar;
             if(i<word.length())wordChar = word.charAt(i);
             else wordChar='(';
-            
             if(guessChar==wordChar){
-                byte index = (byte)Arrays.asList(guess[1]).indexOf('!');
-                if(index != -1 && guess[0][index]==guessChar){
-                    guess[1][index]=' ';
-                    guess[0][index]='_';
-                }
-                guess[0][i]=guessChar;
-                guess[1][i]='*';
-            }else if(guessWord.indexOf(guessChar) != -1 && word.indexOf(guessChar) != -1){
-                guess[0][i]=guessChar;
-                guess[1][i]='!';
-            }
-            
+                guess[i]=guessChar;
+                System.out.print(guessChar+"* ");
+            }else if(guessWord.indexOf(guessChar) != -1 && word.indexOf(guessChar) != -1)System.out.print(guessChar+"! ");
+            else System.out.print(guessChar+"# ");
         }
     }
     
@@ -77,11 +66,7 @@ public class Word{
     
     public String getGuessed(){
         String guessWord="";
-        
-        for(byte i=0;i<guess[0].length;i++){
-            if(guess[1][i]=='*')guessWord+=guess[0][i];
-        }
-        
+        for(byte i=0;i<guess.length;i++)if(guess[i]!='_')guessWord+=guess[i];
         return guessWord;
     }
     
